@@ -1,6 +1,6 @@
 {
   "name": "firefox-extension-template",
-  "version": "0.0.1",
+  "version": "0.1.1",
   "description": "firefox extension template",
   "main": "index.js",
   "scripts": {

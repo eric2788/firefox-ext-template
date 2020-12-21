@@ -5,17 +5,17 @@ const TerserPlugin = require('terser-webpack-plugin');
 var glob = require("glob");
 
 module.exports = {
-	devtool: 'source-map',
+	//devtool: 'source-map',
     stats: 'errors-only',
 	entry: {
         background: glob.sync('./src/background/*.js'),
-        //options: glob.sync('./src/options/*.js'),
         index: './src/index.js'
     },
 	output: {
 		path: path.join(__dirname, './dist'),
         filename: '[name].js'
-	},
+    },
+    mode: 'production',
 	plugins: [
 		new SizePlugin(),
 		new CopyWebpackPlugin({
@@ -27,6 +27,11 @@ module.exports = {
                 },
                 {
                     from: 'node_modules/webextension-polyfill/dist/browser-polyfill.js'
+                },
+                {
+                    from: 'cdn/**/*',
+                    context: 'src',
+                    to: '.'
                 }
             ]
         })

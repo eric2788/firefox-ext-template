@@ -2,7 +2,7 @@
 
     "manifest_version": 2,
     "name": "firefox extension template",
-    "version": "0.0.1",
+    "version": "0.1.1",
   
     "description": "firefox extension template by ericlam",
     "author": "Eric Lam",
